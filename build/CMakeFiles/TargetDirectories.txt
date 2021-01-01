@@ -1,0 +1,3 @@
+/home/timoxa/vim/projects/Bmaze/build/CMakeFiles/rebuild_cache.dir
+/home/timoxa/vim/projects/Bmaze/build/CMakeFiles/edit_cache.dir
+/home/timoxa/vim/projects/Bmaze/build/CMakeFiles/Bmaze.dir

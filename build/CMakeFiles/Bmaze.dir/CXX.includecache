@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/test.h
+
+/home/timoxa/vim/projects/Bmaze/src/main.cpp
+iostream
+-
+test.h
+/home/timoxa/vim/projects/Bmaze/src/test.h
+
