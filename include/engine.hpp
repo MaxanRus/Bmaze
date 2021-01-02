@@ -3,7 +3,7 @@
 #include "map.hpp"
 #include "player.hpp"
 #include "utils.hpp"
-#include "loger.hpp"
+#include "logger.hpp"
 
 #include <vector>
 

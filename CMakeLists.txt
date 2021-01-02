@@ -8,4 +8,4 @@ include_directories("include")
 set(CMAKE_CXX_STANDARD 17)
 
 # add the executable
-add_executable(Bmaze src/map.cpp src/main.cpp include/utils.hpp src/utils.cpp src/player.cpp include/player.hpp src/engine.cpp include/engine.hpp src/loger.cpp include/loger.hpp)
+add_executable(Bmaze src/map.cpp src/main.cpp include/utils.hpp src/utils.cpp src/player.cpp include/player.hpp src/engine.cpp include/engine.hpp src/logger.cpp include/logger.hpp)
