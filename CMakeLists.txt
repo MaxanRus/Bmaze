@@ -5,5 +5,7 @@ project(Bmaze)
 
 include_directories("include")
 
+set(CMAKE_CXX_STANDARD 17)
+
 # add the executable
-add_executable(Bmaze src/main.cpp)
+add_executable(Bmaze src/map.cpp src/main.cpp include/utils.hpp src/utils.cpp src/player.cpp include/player.hpp src/engine.cpp include/engine.hpp src/loger.cpp include/loger.hpp)

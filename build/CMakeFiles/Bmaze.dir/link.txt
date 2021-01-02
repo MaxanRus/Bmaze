@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/Bmaze.dir/src/main.cpp.o -o Bmaze 
