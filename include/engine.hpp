@@ -13,13 +13,13 @@ class Engine {
   Engine(size_t countPlayers, size_t width, size_t height) : map_(width, height), players_(countPlayers) {}
   Engine(const Engine&) = default;
 
-  void StepPlayer(direction);
-  void UseItem(items::type);
+  void StepPlayer(Logger&, utils::direction);
+  void UseItem(utils::items::type);
   void RandomEvents();
   void NextPlayer();
  private:
-  void KillPlayersInCeil(ceil);
-  void KillPlayersInLine(ceil, direction);
+  void KillPlayersInCeil(utils::ceil);
+  void KillPlayersInLine(utils::ceil, utils::direction);
 
   Map map_;
   std::vector<Player> players_;

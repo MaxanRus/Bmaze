@@ -1,35 +1,46 @@
 #pragma once
 
-#include <vector>
 #include "utils.hpp"
 
+#include <vector>
+#include <string>
+
 namespace events {
-struct event {};
+struct event {
+  virtual std::string to_string() const = 0;
+};
 
 struct kill_player : event {
-  int killer;
-  int killed;
+  kill_player(size_t killer, size_t killed) : killer(killer), killed(killed) {}
+  std::string to_string() const override;
+
+  size_t killer;
+  size_t killed;
 };
 
-struct step : event {
-  int player;
-  direction direction;
+struct step_player : event {
+  step_player(size_t player, utils::direction direction) : player(player), direction(direction) {}
+  std::string to_string() const override;
+
+  size_t player;
+  utils::direction direction;
 };
 
-struct fail_step : event {
-  int player;
-  direction direction;
+struct fail_step_player : event {
+  fail_step_player(size_t player, utils::direction direction) : player(player), direction(direction) {}
+  std::string to_string() const override;
+
+  size_t player;
+  utils::direction direction;
 };
 
-struct raise_items : event {
-  int player;
-  items items;
+struct raise_items_player : event {
+  raise_items_player(size_t player, utils::items items) : player(player), items(items) {}
+  std::string to_string() const override;
+
+  size_t player;
+  utils::items items;
 };
 }
 
-struct Logger {
-  void push_back(events::event*);
-  void merge(const Logger&);
-
-  std::vector<events::event*> logs;
-};
+using Logger = std::vector<events::event*>;

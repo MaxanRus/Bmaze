@@ -1,33 +1,32 @@
 #include "map.hpp"
 
-bool Map::IsWall(ceil, direction) {
-    if (d == direction::UP)
-        return horizontal_walls_[c];
-    else if (d == direction::RIGHT)
-        return vertical_walls_[{c.x + 1, c.y}];
-    else if (d == direction::DOWN)
-        return horizontal_walls_[{c.x, c.y + 1}];
-    else
-        return vertical_walls_[c];
+bool Map::IsWall(utils::ceil c, utils::direction d) {
+  switch (d) {
+    case utils::direction::UP : return horizontal_walls_[c];
+    case utils::direction::RIGHT : return vertical_walls_[{c.x + 1, c.y}];
+    case utils::direction::DOWN : return horizontal_walls_[{c.x, c.y + 1}];
+    case utils::direction::LEFT : return vertical_walls_[c];
+  }
+  return false;
 }
 
-items Map::RaiseItems() {
-    // TODO
-    return items();
+utils::items Map::RaiseItems() {
+  // TODO
+  return utils::items();
 }
 
-void Map::PutItems(const items &) {
-    // TODO
+void Map::PutItems(const utils::items&) {
+  // TODO
 }
 
-void Map::CreateWall(ceil, direction) {
-    // TODO
+void Map::CreateWall(utils::ceil c, utils::direction d) {
+  // TODO
 }
 
-void Map::DestroyWall(ceil, direction) {
-    // TODO
+void Map::DestroyWall(utils::ceil c, utils::direction d) {
+  // TODO
 }
 
 void Map::generate() {
-    // TODO
+  // TODO
 }
