@@ -29,6 +29,14 @@ void Map::DestroyWall(utils::ceil c, utils::direction d) {
 }
 
 void Map::generate() {
+  for (size_t i = 0; i < width_; ++i) {
+    horizontal_walls_[utils::ceil(i, 0)] = true;
+    horizontal_walls_[utils::ceil(i, height_)] = true;
+  }
+  for (size_t i = 0; i < height_; ++i) {
+    vertical_walls_[utils::ceil(0, i)] = true;
+    vertical_walls_[utils::ceil(width_, i)] = true;
+  }
   // TODO
 }
 
