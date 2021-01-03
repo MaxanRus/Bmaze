@@ -21,7 +21,7 @@ class Player {
   void Reborn();
 
  private:
-  bool is_live_;
+  bool is_live_ = true;
   utils::ceil position_;
   utils::items items_;
 };

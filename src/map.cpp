@@ -33,5 +33,5 @@ void Map::generate() {
 }
 
 utils::ceil Map::GetPositionMorgue() {
-  return position_morgue_
+  return position_morgue_;
 }
