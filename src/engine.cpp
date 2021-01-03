@@ -10,8 +10,13 @@ void Engine::StepPlayer(Logger& l, utils::direction d) {
   }
 }
 
-void Engine::UseItem(utils::items::type type_item) {
-  // TODO
+void Engine::UseItem(Logger& logger, utils::items::type type_item) {
+  Player player = players_[index_player_];
+  switch (type_item) {
+    case utils::items::type::KNIFE :
+      KillPlayersInCeil(logger, player.GetPosition());
+      break;
+  }
 }
 
 void Engine::RandomEvents() {
@@ -25,8 +30,16 @@ void Engine::NextPlayer() {
     ++index_player_;
 }
 
-void Engine::KillPlayersInCeil(utils::ceil) {
-  // TODO
+void Engine::KillPlayersInCeil(Logger& logger, utils::ceil c) {
+  logger.push_back(new events::use_knife(index_player_));
+  for (size_t i = 0; i < players_.size(); ++i) {
+    if (i == index_player_)
+      continue;
+    if (players_[i].GetPosition() == c) {
+      // TODO death and move to cemetery
+      logger.push_back(new events::kill_player(index_player_, i));
+    }
+  }
 }
 
 void Engine::KillPlayersInLine(utils::ceil, utils::direction) {

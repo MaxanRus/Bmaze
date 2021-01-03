@@ -32,7 +32,7 @@ struct items {
   items operator+(const items&);
 
   enum type {
-    GUN
+    KNIFE, GUN
   };
 };
 

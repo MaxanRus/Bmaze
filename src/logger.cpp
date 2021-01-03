@@ -18,3 +18,7 @@ string fail_step_player::to_string() const {
 string raise_items_player::to_string() const {
   return std::to_string(player) + " raise " + items.to_string();
 }
+
+string use_knife::to_string() const {
+  return std::to_string(player) + " use knife";
+}

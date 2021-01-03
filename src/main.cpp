@@ -12,17 +12,25 @@ int main() {
 
   bool end_game = false;
   while (!end_game) {
+    char type;
     char direction;
-    cin >> direction;
+    cin >> type >> direction;
 
-    Logger tmp;
+    Logger current_logger;
 
-    engine.StepPlayer(tmp, utils::direction(direction));
-    engine.NextPlayer();
-    for (auto i: tmp) {
+    if (type == 's') {
+      engine.StepPlayer(current_logger, utils::direction(direction));
+    } else if (type == 'k') {
+      engine.UseItem(current_logger, utils::items::KNIFE);
+    }
+
+    for (auto i: current_logger) {
       cout << i->to_string() << endl;
     }
-    logger.insert(logger.begin(), tmp.begin(), tmp.end());
+
+    logger.insert(logger.begin(), current_logger.begin(), current_logger.end());
+
+    engine.NextPlayer();
   }
 
   return 0;

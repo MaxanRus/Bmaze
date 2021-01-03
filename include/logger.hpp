@@ -41,6 +41,13 @@ struct raise_items_player : event {
   size_t player;
   utils::items items;
 };
+
+struct use_knife : event {
+  use_knife(size_t player) : player(player) {}
+  std::string to_string() const override;
+
+  size_t player;
+};
 }
 
 using Logger = std::vector<events::event*>;
