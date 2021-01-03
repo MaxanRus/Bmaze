@@ -15,13 +15,17 @@ class Map {
   void CreateWall(utils::ceil, utils::direction);
   void DestroyWall(utils::ceil, utils::direction);
 
-  utils::items RaiseItems();
-  void PutItems(const utils::items&);
+  utils::items RaiseItems(utils::ceil);
+  void PutItems(utils::ceil, const utils::items&);
+
+  utils::ceil GetPositionMorgue();
  private:
   void generate();
 
   size_t width_;
   size_t height_;
+
+  utils::ceil position_morgue_;
   map<utils::ceil, bool> horizontal_walls_;
   map<utils::ceil, bool> vertical_walls_;
   map<utils::ceil, utils::items> items_;

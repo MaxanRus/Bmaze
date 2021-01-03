@@ -10,13 +10,14 @@ bool Map::IsWall(utils::ceil c, utils::direction d) {
   return false;
 }
 
-utils::items Map::RaiseItems() {
-  // TODO
-  return utils::items();
+utils::items Map::RaiseItems(utils::ceil c) {
+  utils::items tmp = items_[c];
+  items_[c] = utils::items();
+  return tmp;
 }
 
-void Map::PutItems(const utils::items&) {
-  // TODO
+void Map::PutItems(utils::ceil c, const utils::items& i) {
+  items_[c] += i;
 }
 
 void Map::CreateWall(utils::ceil c, utils::direction d) {
@@ -29,4 +30,8 @@ void Map::DestroyWall(utils::ceil c, utils::direction d) {
 
 void Map::generate() {
   // TODO
+}
+
+utils::ceil Map::GetPositionMorgue() {
+  return position_morgue_
 }

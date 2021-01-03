@@ -12,9 +12,16 @@ class Player {
   void Step(utils::direction);
   void AddItems(const utils::items&);
   void UseItem(utils::items::type);
+  utils::items GetItems() const;
 
-  utils::ceil GetPosition();
+  utils::ceil GetPosition() const;
+
+  bool IsLive() const;
+  void Die();
+  void Reborn();
+
  private:
+  bool is_live_;
   utils::ceil position_;
   utils::items items_;
 };
